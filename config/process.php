@@ -5,8 +5,6 @@ session_start();
 include_once("conn.php");
 include_once("url.php");
 
-
-
 $id;
 if (!empty($_GET)) {
   $id = $_GET["id"];
@@ -25,7 +23,6 @@ if (!empty($id)) {
   $contacts = [];
 
   $query = "SELECT * FROM contacts";
-
   $stmt = $conn->prepare($query);
   $stmt->execute();
   $contacts = $stmt->fetchAll();
